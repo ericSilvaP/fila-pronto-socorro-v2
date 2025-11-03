@@ -10,7 +10,10 @@ https://docs.djangoproject.com/en/5.2/howto/deployment/asgi/
 import os
 
 from django.core.asgi import get_asgi_application
+from dotenv import load_dotenv
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'emergency_priority_queue.settings')
+load_dotenv()
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "emergency_priority_queue.settings")
 
 application = get_asgi_application()
