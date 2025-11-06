@@ -3,17 +3,20 @@ from django.views.decorators.http import require_POST
 from .forms import PatientForm
 
 
-# Create your views here.
 def register_patient(request):
-    form = PatientForm()
+    patient_form_data = request.session.get("patient_form_data")
+    form = PatientForm(patient_form_data)
     return render(request, "patients/pages/patients_list.html", {"form": form})
 
 
 @require_POST
 def register_patient_post(request):
-    form = PatientForm(request.POST)
+    POST = request.POST
+    request.session["patient_form_data"] = POST
+    form = PatientForm(POST)
 
     if form.is_valid():
         form.save()
+        del request.session["patient_form_data"]
 
     return redirect("patients:register")

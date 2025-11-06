@@ -1,4 +1,3 @@
-from urllib import response
 from django.test.testcases import SimpleTestCase
 from django.urls import reverse, resolve
 from patients import views
