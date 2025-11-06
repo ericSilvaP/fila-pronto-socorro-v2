@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.decorators.http import require_POST
-from patients.forms import PatientForm
+from .forms import PatientForm
 
 
 # Create your views here.
