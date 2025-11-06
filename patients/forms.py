@@ -9,20 +9,17 @@ class PatientForm(forms.ModelForm):
 
     name = forms.CharField(
         label="Nome",
-        error_messages={"required": "Preencha este campo"},
     )
     cpf = forms.CharField(
         label="CPF",
-        error_messages={"required": "Preencha este campo"},
+        max_length=11,
     )
     birth_date = forms.DateField(
         label="Data de Nascimento",
-        error_messages={"required": "Preencha este campo"},
     )
     sus_card = forms.CharField(
         label="Número do SUS",
         max_length=14,
-        error_messages={"required": "Preencha este campo"},
     )
     dad = forms.CharField(
         label="Nome do Pai",
