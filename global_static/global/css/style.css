@@ -108,3 +108,34 @@ h6 {
   color: var(--color-primary-light);
   transition: all 300ms;
 }
+
+/* MAIN CONTENT */
+.main-content-container {
+  margin-top: var(--spacing-gutter-large);
+}
+
+/* MAIN FORM */
+.main-form {
+  background-color: var(--color-secondary);
+  color: white;
+  padding: 3rem;
+  width: fit-content;
+  border-radius: 2rem;
+}
+
+.form-content {
+  display: flex;
+  flex-flow: column;
+  gap: calc(var(--spacing-gutter-medium) / 2);
+}
+
+.form-content .form-title {
+  font-family: var(--font-primary);
+  font-weight: bolder;
+  text-align: center;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+}
