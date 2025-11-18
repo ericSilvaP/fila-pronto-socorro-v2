@@ -1,12 +1,16 @@
-<form action="{{ form_action }}" method="POST">
+<form action="{{ form_action }}" method="POST" class="main-form">
   {% csrf_token %}
-  <div class="form-content"></div>
-  {% for field in form %}
-    <div class="form-field-container">
-      <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-      {{ field }}
-    </div>
-    {{ field.errors }}
-  {% endfor %}
+  <div class="form-content">
+    {% if form_title %}<h3 class="form-title">{{ form_title }}</h3>{% endif %}
+    {% for field in form %}
+      <div class="form-field-container">
+        <div class="form-field">
+          <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+          {{ field }}
+        </div>
+        {{ field.errors }}
+      </div>
+    {% endfor %}
+  </div>
   <button type="submit">Enviar</button>
 </form>

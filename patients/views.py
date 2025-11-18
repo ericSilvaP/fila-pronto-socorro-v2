@@ -10,7 +10,11 @@ def register_patient(request):
     return render(
         request,
         "patients/pages/patients_list.html",
-        {"form": form, "form_action": reverse("patients:create")},
+        {
+            "form": form,
+            "form_action": reverse("patients:create"),
+            "form_title": "CADASTRAR PACIENTES",
+        },
     )
 
 
