@@ -5,12 +5,14 @@
     {% for field in form %}
       <div class="form-field-container">
         <div class="form-field">
-          <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+          <label for="{{ field.id_for_label }}">{{ field.label }}:</label>
           {{ field }}
         </div>
         {{ field.errors }}
       </div>
     {% endfor %}
   </div>
-  <button type="submit">Enviar</button>
+  <div class="form-buttons-container">
+    <button type="submit">Enviar</button>
+  </div>
 </form>
