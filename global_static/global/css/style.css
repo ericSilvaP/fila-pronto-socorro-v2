@@ -74,3 +74,37 @@ h5,
 h6 {
   font-family: var(--font-headings);
 }
+
+/* HEADER */
+.main-header {
+  background-color: var(--color-primary);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+}
+
+.logo-container {
+  width: fit-content;
+}
+
+.logo-container .logo-img {
+  background-size: cover;
+  max-width: 4rem;
+}
+
+.header-buttons {
+  display: flex;
+  gap: var(--spacing-gutter-medium);
+  align-items: center;
+}
+
+.header-buttons li {
+  list-style: none;
+  color: white;
+  cursor: pointer;
+}
+
+.header-buttons li:hover {
+  color: var(--color-primary-light);
+  transition: all 300ms;
+}
