@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patients</title>
-  </head>
-  <body>{% include 'patients/partials/form.html' %}</body>
-</html>
+{% extends 'global/base.html' %}
+{% block title %}
+  Cadastro de Pacientes
+{% endblock title %}
+{% block content %}
+  <div class="form-container">{% include 'patients/partials/form.html' %}</div>
+{% endblock content %}
