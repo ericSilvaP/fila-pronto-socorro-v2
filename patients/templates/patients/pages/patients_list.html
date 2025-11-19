@@ -1,7 +1,9 @@
 {% extends 'global/base.html' %}
+{% load static %}
 {% block title %}
   Cadastro de Pacientes
 {% endblock title %}
 {% block content %}
   <div class="form-container">{% include 'global/partials/form.html' %}</div>
+  <script type="module" src="{% static 'patients/scripts/formMask.js' %}"></script>
 {% endblock content %}

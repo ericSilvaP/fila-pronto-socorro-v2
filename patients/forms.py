@@ -14,16 +14,22 @@ class PatientForm(forms.ModelForm):
     )
     cpf = forms.CharField(
         label="CPF",
-        widget=forms.NumberInput(attrs={"placeholder": "Ex: 111111111-11"}),
-        max_length=11,
+        widget=forms.TextInput(
+            attrs={"placeholder": "Ex: 111111111-11", "class": "form-cpf-field"}
+        ),
+        max_length=14,
     )
     birth_date = forms.DateField(
         label="Data de Nascimento",
-        widget=forms.NumberInput(attrs={"placeholder": "Ex: DD/MM/AAAA"}),
+        widget=forms.NumberInput(
+            attrs={"placeholder": "Ex: DD/MM/AAAA", "class": "form-birth-date-field"}
+        ),
     )
     sus_card = forms.CharField(
         label="Número do SUS",
-        widget=forms.NumberInput(attrs={"placeholder": "Ex: 1234567891012345"}),
+        widget=forms.NumberInput(
+            attrs={"placeholder": "Ex: 1234567891012345", "class": "form-sus-field"}
+        ),
     )
     dad = forms.CharField(
         widget=forms.TextInput(attrs={"placeholder": "Ex: José da Silva"}),
@@ -37,7 +43,9 @@ class PatientForm(forms.ModelForm):
     )
     phone_number = forms.CharField(
         label="Telefone",
-        widget=forms.NumberInput(attrs={"placeholder": "Ex: (99) 9 9999-9999"}),
+        widget=forms.NumberInput(
+            attrs={"placeholder": "Ex: (99) 9 9999-9999", "class": "form-phone-field"}
+        ),
         required=False,
     )
 
