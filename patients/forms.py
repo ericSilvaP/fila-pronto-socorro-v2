@@ -1,5 +1,6 @@
 from django import forms
 from patients.models import Patient
+from utils import strings, validators
 
 
 class PatientForm(forms.ModelForm):
@@ -18,6 +19,7 @@ class PatientForm(forms.ModelForm):
             attrs={"placeholder": "Ex: 111111111-11", "class": "form-cpf-field"}
         ),
         max_length=14,
+        validators=[validators.validateCPF],
     )
     birth_date = forms.DateField(
         label="Data de Nascimento",
@@ -53,7 +55,6 @@ class PatientForm(forms.ModelForm):
         max_length=14,
         required=False,
     )
-
     gender = forms.ChoiceField(
         label="Gênero",
         choices=(
