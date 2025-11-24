@@ -33,20 +33,18 @@ function formatDate(date) {
   return `${days}/${months}/${year}`
 }
 
-const cpfField = document.querySelector('.form-cpf-field')
-cpfField.addEventListener('input', (e) => {
-  const div = e.target
-  div.value = formatCPF(div.value)
-})
+function addMask(selector, maskFunction) {
+  const target = document.querySelector(selector)
+  if (target) {
+    target.addEventListener('input', (e) => {
+      const div = e.target
+      div.value = maskFunction(div.value)
+    })
+  } else {
+    console.warn(`addMask: Campo com seletor "${selector}" não existe`)
+  }
+}
 
-const phoneField = document.querySelector('.form-phone-field')
-phoneField.addEventListener('input', (e) => {
-  const div = e.target
-  div.value = formatPhoneNumber(div.value)
-})
-
-const dateField = document.querySelector('.form-date-field')
-dateField.addEventListener('input', (e) => {
-  const div = e.target
-  div.value = formatDate(div.value)
-})
+addMask('.form-cpf-field', formatCPF)
+addMask('.form-phone-fiel1d', formatPhoneNumber)
+addMask('.form-date-field', formatDate)

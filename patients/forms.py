@@ -30,7 +30,7 @@ class PatientForm(forms.ModelForm):
     )
     sus_card = forms.CharField(
         label="Número do SUS",
-        widget=forms.NumberInput(
+        widget=forms.TextInput(
             attrs={"placeholder": "Ex: 1234567891012345", "class": "form-sus-field"}
         ),
     )
