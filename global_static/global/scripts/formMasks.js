@@ -1,6 +1,9 @@
+function replaceNonNumbers(str) {
+  return str.replace(/[^0-9]+/g, '')
+}
+
 function formatCPF(cpf) {
-  console.log(cpf)
-  cpf = cpf.replace(/[^0-9]+/g, '')
+  cpf = replaceNonNumbers(cpf)
 
   const part1 = cpf.slice(0, 3)
   const part2 = cpf.slice(3, 6)
@@ -12,8 +15,21 @@ function formatCPF(cpf) {
   return [[part1, part2, part3].join('.'), part4].join('-')
 }
 
+function formatPhoneNumber(phone) {
+  phone = replaceNonNumbers(phone)
+
+  if (phone.length <= 2) return `${phone}`
+  return `(${phone.slice(0, 2)}) ${phone.slice(2, 11)}`.trim()
+}
+
 const cpfField = document.querySelector('.form-cpf-field')
 cpfField.addEventListener('input', (e) => {
   const div = e.target
   div.value = formatCPF(div.value)
+})
+
+const phoneField = document.querySelector('.form-phone-field')
+phoneField.addEventListener('input', (e) => {
+  const div = e.target
+  div.value = formatPhoneNumber(div.value)
 })

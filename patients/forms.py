@@ -43,9 +43,10 @@ class PatientForm(forms.ModelForm):
     )
     phone_number = forms.CharField(
         label="Telefone",
-        widget=forms.NumberInput(
+        widget=forms.TextInput(
             attrs={"placeholder": "Ex: (99) 9 9999-9999", "class": "form-phone-field"}
         ),
+        max_length=14,
         required=False,
     )
 
