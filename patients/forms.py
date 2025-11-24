@@ -33,6 +33,7 @@ class PatientForm(forms.ModelForm):
         widget=forms.TextInput(
             attrs={"placeholder": "Ex: 1234567891012345", "class": "form-sus-field"}
         ),
+        max_length=15,
     )
     dad = forms.CharField(
         widget=forms.TextInput(attrs={"placeholder": "Ex: José da Silva"}),
