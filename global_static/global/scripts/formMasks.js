@@ -22,6 +22,17 @@ function formatPhoneNumber(phone) {
   return `(${phone.slice(0, 2)}) ${phone.slice(2, 11)}`.trim()
 }
 
+function formatDate(date) {
+  date = replaceNonNumbers(date)
+
+  const days = date.slice(0, 2)
+  if (date.length <= 2) return `${days}`
+  const months = date.slice(2, 4)
+  if (date.length <= 4) return `${days}/${months}`
+  const year = date.slice(4, 8)
+  return `${days}/${months}/${year}`
+}
+
 const cpfField = document.querySelector('.form-cpf-field')
 cpfField.addEventListener('input', (e) => {
   const div = e.target
@@ -32,4 +43,10 @@ const phoneField = document.querySelector('.form-phone-field')
 phoneField.addEventListener('input', (e) => {
   const div = e.target
   div.value = formatPhoneNumber(div.value)
+})
+
+const dateField = document.querySelector('.form-date-field')
+dateField.addEventListener('input', (e) => {
+  const div = e.target
+  div.value = formatDate(div.value)
 })

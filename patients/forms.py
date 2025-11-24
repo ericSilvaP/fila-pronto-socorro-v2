@@ -21,8 +21,11 @@ class PatientForm(forms.ModelForm):
     )
     birth_date = forms.DateField(
         label="Data de Nascimento",
-        widget=forms.NumberInput(
-            attrs={"placeholder": "Ex: DD/MM/AAAA", "class": "form-birth-date-field"}
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "Ex: DD/MM/AAAA",
+                "class": "form-birth-date-field form-date-field",
+            }
         ),
     )
     sus_card = forms.CharField(
