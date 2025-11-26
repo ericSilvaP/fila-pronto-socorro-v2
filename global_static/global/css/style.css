@@ -179,3 +179,35 @@ h6 {
   border: none;
   box-shadow: var(--box-shadow-default);
 }
+
+/* FLASH MESSAGES */
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.7rem 0;
+}
+
+.messages div {
+  text-align: center;
+}
+
+.message-success {
+  color: var(--color-success-dark);
+}
+
+.message-warning {
+  color: var(--color-warning-dark);
+}
+
+.message-debug {
+  color: var(--color-debug-dark);
+}
+
+.message-info {
+  color: var(--color-info-dark);
+}
+
+.message-error {
+  color: var(--color-error-dark);
+}
