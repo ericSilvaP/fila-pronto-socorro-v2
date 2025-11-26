@@ -85,3 +85,10 @@ class PatientForm(forms.ModelForm):
             raise forms.ValidationError("Preencha este campo", code="invalid")
 
         return strings.replaceNonNumbers(cpf)
+
+    def clean_phone_number(self):
+        phone_number = self.cleaned_data.get("phone_number")
+        if not phone_number:
+            raise forms.ValidationError("Preencha este campo", code="invalid")
+
+        return strings.replaceNonNumbers(phone_number)
