@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+from django.contrib.messages import constants
 
 load_dotenv()
 
@@ -41,7 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "patients"
+    "patients",
 ]
 
 MIDDLEWARE = [
@@ -132,3 +133,12 @@ MEDIA_ROOT = BASE_DIR / "media"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Flash Messages
+MESSAGE_TAGS = {
+    constants.SUCCESS: "message-success",
+    constants.ERROR: "message-error",
+    constants.WARNING: "message-warning",
+    constants.DEBUG: "message-debug",
+    constants.INFO: "message-info",
+}

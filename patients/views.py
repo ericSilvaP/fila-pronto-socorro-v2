@@ -1,7 +1,9 @@
+import re
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views.decorators.http import require_POST
 from .forms import PatientForm
+from django.contrib import messages
 
 
 def register_patient(request):
@@ -26,6 +28,7 @@ def register_patient_post(request):
 
     if form.is_valid():
         form.save()
+        messages.success(request, "Paciente criado com sucesso!")
         del request.session["patient_form_data"]
 
     return redirect("patients:register")
