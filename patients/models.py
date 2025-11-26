@@ -5,7 +5,7 @@ class Patient(models.Model):
     name = models.CharField(max_length=65)
     dad = models.CharField(max_length=65, null=True, blank=True)
     mom = models.CharField(max_length=65, null=True, blank=True)
-    cpf = models.CharField(max_length=14)
+    cpf = models.CharField(max_length=14, unique=True)
     birth_date = models.DateField()
     sus_card = models.CharField(max_length=15, null=True, blank=True)
     phone_number = models.CharField(max_length=11, null=True, blank=True)

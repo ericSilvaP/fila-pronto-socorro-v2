@@ -20,6 +20,7 @@ class PatientForm(forms.ModelForm):
         ),
         max_length=14,
         validators=[validators.validateCPF],
+        error_messages={"unique": "Já existe um paciente como este CPF."},
     )
     birth_date = forms.DateField(
         label="Data de Nascimento",
@@ -36,6 +37,7 @@ class PatientForm(forms.ModelForm):
             attrs={"placeholder": "Ex: 1234567891012345", "class": "form-sus-field"}
         ),
         max_length=15,
+        min_length=15,
     )
     dad = forms.CharField(
         widget=forms.TextInput(attrs={"placeholder": "Ex: José da Silva"}),
@@ -53,6 +55,7 @@ class PatientForm(forms.ModelForm):
             attrs={"placeholder": "Ex: (99) 9 9999-9999", "class": "form-phone-field"}
         ),
         max_length=14,
+        min_length=14,
         required=False,
     )
     gender = forms.ChoiceField(
