@@ -78,3 +78,10 @@ class PatientForm(forms.ModelForm):
             ("o-", "O-"),
         ),
     )
+
+    def clean_cpf(self):
+        cpf = self.cleaned_data.get("cpf")
+        if not cpf:
+            raise forms.ValidationError("Preencha este campo", code="invalid")
+
+        return strings.replaceNonNumbers(cpf)
