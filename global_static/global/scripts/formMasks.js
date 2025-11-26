@@ -46,6 +46,6 @@ function addMask(selector, maskFunction) {
 }
 
 addMask('.form-cpf-field', formatCPF)
-addMask('.form-phone-fiel1d', formatPhoneNumber)
+addMask('.form-phone-field', formatPhoneNumber)
 addMask('.form-date-field', formatDate)
 addMask('.form-sus-field', replaceNonNumbers)
